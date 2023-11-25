@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNS Enumeration Tool</title>
+
+</head>
+<body>
+    <h1>DNS Enumeration Tool</h1>
+    <form method="post">
+        <label for="domain">Enter the domain:</label>
+        <input type="text" id="domain" name="domain" required>
+        <button type="submit">Perform DNS Enumeration</button>
+    </form>
+     
+    {% if domain %}
+       <h2>Results for {{ domain }}:</h2>
+         <table border="1"> 
+            <tr>
+                <th>Subdomain</th>
+                <th>IP Address</th>
+                <th>Status Code</th>
+            </tr> 
+            
+            {% for result in results %}
+                <tr>
+                    <td>{{ result.subdomain }}</td>
+                    <td>{% if result.ip_address %}{{ result.ip_address | join(', ') }}{% endif %}</td>
+                  <td>{% if result.status %}{{ result.status }}{% else %}N/A{% endif %}</td> 
+                </tr> 
+                
+            {% endfor %}
+         </table> 
+    {% endif %}
+</body>
+</html>
