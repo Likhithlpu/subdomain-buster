@@ -1,0 +1,35 @@
+body{
+    scroll-behavior: smooth;
+    color: aliceblue;
+    margin-top: 0;
+}
+
+.back{
+    background-image: url("background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.back h1{
+    text-align: center;
+    font-size: 50px;
+}
+.dns{
+    text-align: center;
+}
+.dns input{
+    width: 300px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid red;
+    border-radius: 15px;
+}
+.back tr th{
+    color: red;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.back tr td{
+    color: whitesmoke;
+    font-weight: normal;
+}
